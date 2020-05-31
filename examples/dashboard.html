@@ -44,7 +44,7 @@
       <div class="sidebar-wrapper">
         <div class="logo">
           <a href="javascript:void(0)" class="simple-text logo-mini">
-            TARS - 
+            TARS -
           </a>
           <a href="javascript:void(0)" class="simple-text logo-normal">
             Covid Hotspot
@@ -96,7 +96,8 @@
             </div>
             <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -104,11 +105,12 @@
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
               <li class="search-bar input-group">
-                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
+                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i
+                    class="tim-icons icon-zoom-split"></i>
                   <span class="d-lg-none d-md-block">Search</span>
                 </button>
               </li>
-              
+
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
@@ -131,7 +133,8 @@
           </div>
         </div>
       </nav>
-      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -267,7 +270,8 @@
                           <p class="text-muted">Dwuamish Head, Seattle, WA 8:47 AM</p>
                         </td>
                         <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link"
+                            data-original-title="Edit Task">
                             <i class="tim-icons icon-pencil"></i>
                           </button>
                         </td>
@@ -283,13 +287,14 @@
                             </label>
                           </div>
                         </td>
-                       
+
                         <td>
                           <p class="title">Arival at export process</p>
                           <p class="text-muted">Capitol Hill, Seattle, WA 12:34 AM</p>
                         </td>
                         <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link"
+                            data-original-title="Edit Task">
                             <i class="tim-icons icon-pencil"></i>
                           </button>
                         </td>
@@ -389,11 +394,12 @@
   <!--  Notifications Plugin    -->
   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script>
+  <!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <script>
-    $(document).ready(function() {
-      $().ready(function() {
+    $(document).ready(function () {
+      $().ready(function () {
         $sidebar = $('.sidebar');
         $navbar = $('.navbar');
         $main_panel = $('.main-panel');
@@ -410,7 +416,7 @@
 
 
 
-        $('.fixed-plugin a').click(function(event) {
+        $('.fixed-plugin a').click(function (event) {
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
               event.stopPropagation();
@@ -420,7 +426,7 @@
           }
         });
 
-        $('.fixed-plugin .background-color span').click(function() {
+        $('.fixed-plugin .background-color span').click(function () {
           $(this).siblings().removeClass('active');
           $(this).addClass('active');
 
@@ -443,7 +449,7 @@
           }
         });
 
-        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function () {
           var $btn = $(this);
 
           if (sidebar_mini_active == true) {
@@ -457,23 +463,23 @@
           }
 
           // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
+          var simulateWindowResize = setInterval(function () {
             window.dispatchEvent(new Event('resize'));
           }, 180);
 
           // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
+          setTimeout(function () {
             clearInterval(simulateWindowResize);
           }, 1000);
         });
 
-        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function () {
           var $btn = $(this);
 
           if (white_color == true) {
 
             $('body').addClass('change-background');
-            setTimeout(function() {
+            setTimeout(function () {
               $('body').removeClass('change-background');
               $('body').removeClass('white-content');
             }, 900);
@@ -481,7 +487,7 @@
           } else {
 
             $('body').addClass('change-background');
-            setTimeout(function() {
+            setTimeout(function () {
               $('body').removeClass('change-background');
               $('body').addClass('white-content');
             }, 900);
@@ -492,18 +498,18 @@
 
         });
 
-        $('.light-badge').click(function() {
+        $('.light-badge').click(function () {
           $('body').addClass('white-content');
         });
 
-        $('.dark-badge').click(function() {
+        $('.dark-badge').click(function () {
           $('body').removeClass('white-content');
         });
       });
     });
   </script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       // Javascript method's body can be found in assets/js/demos.js
       demo.initDashboardPageCharts();
 
