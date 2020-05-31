@@ -2622,6 +2622,7 @@ textarea.form-control.is-invalid {
 @media (prefers-reduced-motion: reduce) {
   .btn {
     transition: none;
+    float: left;
   }
 }
 
@@ -20411,7 +20412,8 @@ Copyright (c) 2015 Daniel Eden
   font-weight: 400;
 }
 
-.card-tasks .card-header .dropdown {
+.card-tasks .card-header .
+ {
   float: right;
   color: #cccccc;
 }
