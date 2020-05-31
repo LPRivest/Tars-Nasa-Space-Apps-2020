@@ -1,6 +1,10 @@
         // TO MAKE THE MAP APPEAR YOU MUST
         // ADD YOUR ACCESS TOKEN FROM
         // https://account.mapbox.com
+        function pass(){
+            alert("hi");
+            return 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson'
+        }
         mapboxgl.accessToken = 'pk.eyJ1IjoiaXJpc2xhd2x5IiwiYSI6ImNrYXVhaXA1YzEwaGkycHBjemxkZGZwZHEifQ.mn9qHNIYNmWH7fL5Y8ikUA';
         var map = new mapboxgl.Map({
             container: 'map',
