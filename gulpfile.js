@@ -27,8 +27,3 @@ gulp.task('watch', function() {
 });
 
 gulp.task('open', function() {
-  gulp.src('examples/dashboard.html')
-    .pipe(open());
-});
-
-gulp.task('open-app', ['open', 'watch']);
