@@ -10,6 +10,24 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlbGxhcjc3NyIsImEiOiJja2F1Ynp1ZGUwN2dvMnFvO
         zoom: 2
     });
 
+
+// Add geolocate control to the map.
+map.addControl(
+    new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    })
+);
+
+
+var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+});
+
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
     map.on('load', function() {
         // Add a geojson point source.
         // Heatmap layers also work with a vector tile source.
