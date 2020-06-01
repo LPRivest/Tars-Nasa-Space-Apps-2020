@@ -49,7 +49,7 @@ map.on('load', function () {
             'heatmap-weight': [
                 'interpolate',
                 ['linear'],
-                ['get', 'hectare'],
+                ['get', 'mag'],
                 0,
                 0,
                 6,
