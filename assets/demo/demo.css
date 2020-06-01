@@ -13,7 +13,9 @@
   display: block;
   width: 100%;
 }
-
+#graph-hide{
+  display:none;
+}
 .typography-line span {
   bottom: 10px;
   color: #c0c1c2;

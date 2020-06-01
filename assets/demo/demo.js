@@ -1,4 +1,7 @@
 type = ['primary', 'info', 'success', 'warning', 'danger'];
+var CanadianProvinces = ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK'];
+let parkData = ['48', '22', '94', '132', '212', '153', '71', '37', '76', ' 151' ]
+let canadaCases = [1584, 503, 214, 168, 501, 1086, 1894, 171, 5890, 547];
 
 demo = {
   initPickColor: function() {
@@ -393,33 +396,29 @@ demo = {
     gradientStroke.addColorStop(0.4, 'rgba(66,134,121,0.0)'); //green colors
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
-    var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
-      datasets: [{
-        label: "My First dataset",
-        fill: true,
-        backgroundColor: gradientStroke,
-        borderColor: '#00d6b4',
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0.0,
-        pointBackgroundColor: '#00d6b4',
-        pointBorderColor: 'rgba(255,255,255,0)',
-        pointHoverBackgroundColor: '#00d6b4',
-        pointBorderWidth: 20,
-        pointHoverRadius: 4,
-        pointHoverBorderWidth: 15,
-        pointRadius: 4,
-        data: [90, 27, 60, 12, 80],
-      }]
-    };
 
     var myChart = new Chart(ctxGreen, {
-      type: 'line',
-      data: data,
-      options: gradientChartOptionsConfigurationWithTooltipGreen
-
-    });
+        type: 'bar',
+        responsive: true,
+        legend: {
+          display: false
+        },
+        data: {
+          labels: CanadianProvinces,
+          datasets: [{
+            label: "Countries",
+            fill: true,
+            backgroundColor: gradientStroke,
+            hoverBackgroundColor: gradientStroke,
+            borderColor: '#32CD32',
+            borderWidth: 2,
+            borderDash: [],
+            borderDashOffset: 0.0,
+            data: parkData,
+          }],
+        },
+        options: gradientBarChartConfiguration
+      });
 
 
 
@@ -434,12 +433,15 @@ demo = {
     gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
     gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
     gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
+    var chart_data = [1, 13, 1013, 2112, 2573, 3000, 4000, 5000, 6000, 6000, 7000, 8000 ];
+    var recovery = [0, 0, 507, 1322, 2170, 2600, 3000, 3500, 4000, 4500, 5000, 5500]
+    var death = [0, 1 , 24, 111,164, 184, 200, 220, 244, 260, 290, 310 ];
     var config = {
       type: 'line',
       data: {
         labels: chart_labels,
         datasets: [{
-          label: "My First dataset",
+          label: "Covid-19 cases",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: '#d346b1',
@@ -454,29 +456,127 @@ demo = {
           pointHoverBorderWidth: 15,
           pointRadius: 4,
           data: chart_data,
-        }]
+        },
+        {
+          label: "Recovery",
+          fill: true,
+          backgroundColor: gradientStroke,
+          borderColor: '#FFFF99',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: '	#FFFF99',
+          pointBorderColor: 'rgba(255,255,255,0)',
+          pointHoverBackgroundColor: '#FFFF99',
+          pointBorderWidth: 20,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 15,
+          pointRadius: 4,
+          data: recovery,
+        },
+        {
+          label: "Death",
+          fill: true,
+          backgroundColor: gradientStroke,
+          borderColor: '#FF6666',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: '	#FF6666',
+          pointBorderColor: 'rgba(255,255,255,0)',
+          pointHoverBackgroundColor: '#FF6666',
+          pointBorderWidth: 20,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 15,
+          pointRadius: 4,
+          data: death,
+        }
+      ],
+        
       },
       options: gradientChartOptionsConfigurationWithTooltipPurple
     };
     var myChartData = new Chart(ctx, config);
+
+    function calc(data, recovery, death){
+      let aveData = 0;
+      let aveRecov= 0;
+      let aveDeath = 0;
+      let len = 4;
+ 
+      for(let i = 0; i <= len; i++){
+        aveData += data[i];
+        aveRecov += recovery[i];
+        aveDeath += death[i];
+      }
+      aveData /= 5;
+      aveRecov /= 5;
+      aveDeath /= 5;
+
+      for(let i = len; i < 12; i++){
+
+        data[i] = data[i-1] +  aveData;
+        recovery[i] = recovery[i-1] +  aveRecov;
+        death[i] = death[i-1] + aveDeath;
+
+      }
+    }
+
+    function calcDeath(death){
+      let aveDeath = 0;
+      let len = 4;
+ 
+      for(let i = 0; i <= len; i++){
+        aveDeath += death[i];
+      }
+      aveDeath /= 5;
+
+      for(let i = len; i < 12; i++){
+        death[i] = death[i-1] + aveDeath;
+
+      }
+    }
     $("#0").click(function() {
+      let loc = document.getElementById('locationName');
+      loc.innerHTML = 'Alberta';
+      var chart_data = [0, 1, 754, 5312, 6992 ];
+      var recovery = [0, 0, 120, 2161,6245]
+      var death = [0, 1 , 24, 111,164];
+      calc(chart_data, recovery, death)
+      console.log(chart_data);
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
+      data.datasets[1].data = recovery;
+      data.datasets[2].data = death;
       data.labels = chart_labels;
       myChartData.update();
     });
+
     $("#1").click(function() {
-      var chart_data = [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120];
+      let loc = document.getElementById('locationName');
+      loc.innerHTML = 'British Columbia';
+      var chart_data = [1, 13, 1013, 2112, 2573, 3000, 4000, 5000, 6000, 6000, 7000, 8000 ];
+      var recovery = [0, 0, 507, 1322, 2170, 2600, 3000, 3500, 4000, 4500, 5000, 5500]
+      var death = [0, 1 , 24, 111,164, 184, 200, 220, 244, 260, 290, 310 ];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
+      data.datasets[1].data = recovery;
+      data.datasets[2].data = death;
       data.labels = chart_labels;
       myChartData.update();
     });
 
     $("#2").click(function() {
-      var chart_data = [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130];
+      let loc = document.getElementById('locationName');
+      loc.innerHTML = 'Quebec';
+      var chart_data = [0, 0, 4162, 27538, 51059, 67612, 78881, 90148, 105734, 113489, 129586, 138745];
+      var recovery = [0, 0, 135, 6299, 11458, 15056, 18500, 22043, 25900, 29000, 32000, 35000]
+      var death = [0, 1 , 31, 1859,4641]
+      calcDeath(death);
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
+      data.datasets[1].data = recovery;
+      data.datasets[2].data = death;
       data.labels = chart_labels;
       myChartData.update();
     });
@@ -498,7 +598,8 @@ demo = {
         display: false
       },
       data: {
-        labels: ['USA', 'GER', 'AUS', 'UK', 'RO', 'BR'],
+        labels: CanadianProvinces,
+
         datasets: [{
           label: "Countries",
           fill: true,
@@ -508,7 +609,7 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45],
+          data: canadaCases,
         }]
       },
       options: gradientBarChartConfiguration
@@ -516,227 +617,5 @@ demo = {
 
   },
 
-  initGoogleMaps: function() {
-    var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
-    var mapOptions = {
-      zoom: 13,
-      center: myLatlng,
-      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-      styles: [{
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#1d2c4d"
-          }]
-        },
-        {
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#8ec3b9"
-          }]
-        },
-        {
-          "elementType": "labels.text.stroke",
-          "stylers": [{
-            "color": "#1a3646"
-          }]
-        },
-        {
-          "featureType": "administrative.country",
-          "elementType": "geometry.stroke",
-          "stylers": [{
-            "color": "#4b6878"
-          }]
-        },
-        {
-          "featureType": "administrative.land_parcel",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#64779e"
-          }]
-        },
-        {
-          "featureType": "administrative.province",
-          "elementType": "geometry.stroke",
-          "stylers": [{
-            "color": "#4b6878"
-          }]
-        },
-        {
-          "featureType": "landscape.man_made",
-          "elementType": "geometry.stroke",
-          "stylers": [{
-            "color": "#334e87"
-          }]
-        },
-        {
-          "featureType": "landscape.natural",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#023e58"
-          }]
-        },
-        {
-          "featureType": "poi",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#283d6a"
-          }]
-        },
-        {
-          "featureType": "poi",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#6f9ba5"
-          }]
-        },
-        {
-          "featureType": "poi",
-          "elementType": "labels.text.stroke",
-          "stylers": [{
-            "color": "#1d2c4d"
-          }]
-        },
-        {
-          "featureType": "poi.park",
-          "elementType": "geometry.fill",
-          "stylers": [{
-            "color": "#023e58"
-          }]
-        },
-        {
-          "featureType": "poi.park",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#3C7680"
-          }]
-        },
-        {
-          "featureType": "road",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#304a7d"
-          }]
-        },
-        {
-          "featureType": "road",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#98a5be"
-          }]
-        },
-        {
-          "featureType": "road",
-          "elementType": "labels.text.stroke",
-          "stylers": [{
-            "color": "#1d2c4d"
-          }]
-        },
-        {
-          "featureType": "road.highway",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#2c6675"
-          }]
-        },
-        {
-          "featureType": "road.highway",
-          "elementType": "geometry.fill",
-          "stylers": [{
-            "color": "#9d2a80"
-          }]
-        },
-        {
-          "featureType": "road.highway",
-          "elementType": "geometry.stroke",
-          "stylers": [{
-            "color": "#9d2a80"
-          }]
-        },
-        {
-          "featureType": "road.highway",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#b0d5ce"
-          }]
-        },
-        {
-          "featureType": "road.highway",
-          "elementType": "labels.text.stroke",
-          "stylers": [{
-            "color": "#023e58"
-          }]
-        },
-        {
-          "featureType": "transit",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#98a5be"
-          }]
-        },
-        {
-          "featureType": "transit",
-          "elementType": "labels.text.stroke",
-          "stylers": [{
-            "color": "#1d2c4d"
-          }]
-        },
-        {
-          "featureType": "transit.line",
-          "elementType": "geometry.fill",
-          "stylers": [{
-            "color": "#283d6a"
-          }]
-        },
-        {
-          "featureType": "transit.station",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#3a4762"
-          }]
-        },
-        {
-          "featureType": "water",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#0e1626"
-          }]
-        },
-        {
-          "featureType": "water",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#4e6d70"
-          }]
-        }
-      ]
-    };
-
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      title: "Hello World!"
-    });
-
-    // To add the marker to the map, call setMap();
-    marker.setMap(map);
-  },
-
-  showNotification: function(from, align) {
-    color = Math.floor((Math.random() * 4) + 1);
-
-    $.notify({
-      icon: "tim-icons icon-bell-55",
-      message: "Welcome to <b>Black Dashboard</b> - a beautiful freebie for every web developer."
-
-    }, {
-      type: type[color],
-      timer: 8000,
-      placement: {
-        from: from,
-        align: align
-      }
-    });
-  }
 
 };
