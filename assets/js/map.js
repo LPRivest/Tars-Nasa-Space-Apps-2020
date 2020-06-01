@@ -35,7 +35,8 @@ map.on('load', function () {
     // Heatmap layers also work with a vector tile source.
     map.addSource('earthquakes', {
         'type': 'geojson',
-        'data': 'https://raw.githubusercontent.com/LPRivest/Tars-Nasa-Space-Apps-2020/frontend_development/assets/js/mapGeo.geojson'
+        'data': 'https://raw.githubusercontent.com/LPRivest/Tars-Nasa-Space-Apps-2020/frontend_development/assets/js/mapGeo2.geojson'
+        //https://raw.githubusercontent.com/LPRivest/Tars-Nasa-Space-Apps-2020/frontend_development/assets/js/mapGeo2.geojson
     });
 
     map.addLayer({
