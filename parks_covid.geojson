@@ -21,6 +21,6 @@
 { "type": "Feature", "properties": { "id": "ak16994536", "risk": 3, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.170066, 49.220813] } },
 { "type": "Feature", "properties": { "id": "ak16994537", "risk": 2, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.033713, 49.21912] } },
 { "type": "Feature", "properties": { "id": "ak16994538", "risk": 4.5, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.036128, 49.207509] } },
-{ "type": "Feature", "properties": { "id": "ak16994539", "risk": 7.2, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.152513, 49.275353] } },
+{ "type": "Feature", "properties": { "id": "ak16994539", "risk": 7.2, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.152513, 49.275353] } }
 ]
 }

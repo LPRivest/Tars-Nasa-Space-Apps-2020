@@ -31,17 +31,17 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlbGxhcjc3NyIsImEiOiJja2F1Ynp1ZGUwN2dvMnFvO
     map.on('load', function() {
         // Add a geojson point source.
         // Heatmap layers also work with a vector tile source.
-        map.addSource('earthquakes', {
+        map.addSource('covid_data', {
             'type': 'geojson',
             'data':
-                'https://raw.githubusercontent.com/AhmadrezaBanitaba/blog/master/earthquakes.geojson?token=AFBZZPWTUR4EWZBFG62D5YC63W4SI'
+                'https://raw.githubusercontent.com/AhmadrezaBanitaba/blog/master/covid_parks.geojson?token=AFBZZPTMM4H6WM7V56KRN2C63W7AG'
         });
 
         map.addLayer(
             {
-                'id': 'earthquakes-heat',
+                'id': 'covid-parks-heat',
                 'type': 'heatmap',
-                'source': 'earthquakes',
+                'source': 'covid_data',
                 'maxzoom': 9,
                 'paint': {
                     // Increase the heatmap weight based on frequency and property risk
@@ -112,9 +112,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlbGxhcjc3NyIsImEiOiJja2F1Ynp1ZGUwN2dvMnFvO
 
         map.addLayer(
             {
-                'id': 'earthquakes-point',
+                'id': 'covid-point',
                 'type': 'circle',
-                'source': 'earthquakes',
+                'source': 'covid_data',
                 'minzoom': 7,
                 'paint': {
                     // Size circle radius by risk rating and zoom level
