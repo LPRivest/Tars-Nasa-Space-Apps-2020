@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Covid Trends
+    Black Dashboard by Creative Tim
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -33,7 +33,6 @@
   <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
-
 </head>
 
 <body class="">
@@ -42,50 +41,52 @@
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
     -->
-      <div class="sidebar-wrapper">
-        <div class="logo">
-
-          <a href="javascript:void(0)" class="simple-text logo-normal">
-            Covisualize
+    <div class="sidebar-wrapper">
+      <div class="logo">
+          <a href="javascript:void(0)" class="simple-text logo-mini">
+              
           </a>
-        </div>
-        <ul class="nav">
-          <li>
-            <a href="./dashboard.html">
-              <i class="tim-icons icon-chart-pie-36"></i>
-              <p>Corona hotspot</p>
-            </a>
-          </li>
-          <li class="active ">
-            <a href="./icons.html">
-              <i class="tim-icons icon-atom"></i>
-              <p>Corona trends</p>
-            </a>
-          </li>
-          <li>
-            <a href="./map.html">
-              <i class="tim-icons icon-pin"></i>
-              <p>Corona forecast</p>
-            </a>
-          </li>
-
-
-          <li>
-            <a href="./rtl.html">
-              <i class="tim-icons icon-world"></i>
-              <p>About Us</p>
-            </a>
-          </li>
-
-          <li>
-            <a href="./tables.html">
-              <i class="tim-icons icon-world"></i>
-              <p>Contact us</p>
-            </a>
-          </li>
-        </ul>
+          <a href="javascript:void(0)" class="simple-text logo-normal">
+              COVisualize
+          </a>
       </div>
-    </div>
+      <ul class="nav">
+          <li>
+              <a href="./dashboard.html">
+                  <i class="tim-icons icon-chart-pie-36"></i>
+                  <p>Corona hotspot</p>
+              </a>
+          </li>
+          <li>
+              <a href="./trends.html">
+                  <i class="tim-icons icon-atom"></i>
+                  <p>Corona trends</p>
+              </a>
+          </li>
+          <li>
+              <a href="./map.html">
+                  <i class="tim-icons icon-pin"></i>
+                  <p>Corona forecast</p>
+              </a>
+          </li>
+
+
+          <li>
+              <a href="./rtl.html">
+                  <i class="tim-icons icon-world"></i>
+                  <p>About Us</p>
+              </a>
+          </li>
+
+          <li class="active ">
+              <a href="./tables.html">
+                  <i class="tim-icons icon-world"></i>
+                  <p>Contact us</p>
+              </a>
+          </li>
+      </ul>
+  </div>
+</div>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
@@ -98,10 +99,9 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">Corona Trends</a>
+            <a class="navbar-brand" href="javascript:void(0)">Contacts</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-            aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -109,116 +109,129 @@
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
               <li class="search-bar input-group">
-  
+                
               </li>
-        
+              
+              
+              <li class="separator d-lg-none"></li>
             </ul>
           </div>
         </div>
       </nav>
-      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="tim-icons icon-simple-remove"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
+      
       <!-- End Navbar -->
       <div class="content">
         <div class="row">
-          <div class="col-12">
-
-            <!--Drop-down menu for provinces-->
-            <div class="dropdown">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <i id="locationName">Choose Location</i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" id = "1" href="#pablo">British Columbia</a>
-                <a class="dropdown-item" id = "0" href="#pablo">Alberta</a>
-                <a class="dropdown-item" id = "2" href="#pablo">Quebec</a>
-
-              </div>
-            </div>
-
-            <div class="card card-chart">
-              <div class="card-header ">
-                <div class="row">
-                    
-                  </div>
-              
-                  <div class="col-sm-6 text-left">
-                    <div class="card-header ">
-                      <h5 class="card-category">Trend</h5>
-                      <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> Provincial covid-19 cases monthly</h3>
-                    </div>
-
-                  </div>
-
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header">
+                <h4 class="card-title"> Contact Us</h4>
               </div>
               <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="chartBig1"></canvas>
+                <div class="table-responsive">
+                  <table class="table tablesorter " id="">
+                    <thead class=" text-primary">
+                      <tr>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Email
+                        </th>
+                        <th>
+                          LinkedIn URL
+                        </th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>
+                          Harshdeep Singh 
+                        </td>
+                        <td>
+                          harshdeepkairon@yahoo.com
+                        </td>
+                        <td>
+                          <a href="http://linkedin.com/in/harshdeep-singh-71b98b185">http://linkedin.com/in/harshdeep-singh-71b98b185</a>
+                        </td>
+                      
+                      </tr>
+                      <tr>
+                        <td>
+                          Iris Law
+                        </td>
+                        <td>
+                          irislawly@gmail.com
+                        </td>
+                        <td>
+                          <a href="http://linkedin.com/in/irislaw">http://linkedin.com/in/irislaw</a>
+                        </td>
+                        
+                      </tr>
+                      <tr>
+                        <td>
+                          Kayla Arbez
+                        </td>
+                        <td>
+                          kaarbez@gmail.com
+                        </td>
+                        <td>
+                          <a href="https://www.linkedin.com/in/kayla-arbez-3077a6118/">https://www.linkedin.com/in/kayla-arbez-3077a6118/</a>
+                        </td>
+                        
+                      </tr>
+                      <tr>
+                        <td>
+                          Louis-Philippe Rivest
+                        </td>
+                        <td>
+                          lprivest@gmail.com
+                        </td>
+                        <td>
+                          <a href="https://www.linkedin.com/in/louisphilipperivestgiguere/">https://www.linkedin.com/in/louisphilipperivestgiguere/</a>
+                        </td>
+                        
+                      </tr>
+                      <tr>
+                        <td>
+                          Pardeep Kaur Ranouta
+                        </td>
+                        <td>
+                          panesarpardeep0@gmail.com
+                        </td>
+                        <td>
+                          <a href="https://www.linkedin.com/in/rpardeep/">https://www.linkedin.com/in/rpardeep/</a>
+                        </td>
+          
+                      </tr>
+                      <tr>
+                        <td>
+                          Reza Banitaba
+                        </td>
+                        <td>
+                          ahmadreza.banitaba@gmail.com
+                        </td>
+                        <td>
+                          <a href="https://www.linkedin.com/in/ahmadrezabanitaba/">https://www.linkedin.com/in/ahmadrezabanitaba/</a>
+                        </td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-
-          <div class="col-lg-4">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Trend</h5>
-                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i>Provinces and their covid-19 cases (per million)</h3>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="CountryChart"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Trend</h5>
-                <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> Province and their Park Mobility</h3>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="chartLineGreen"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4" id="graph-hide">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Trend</h5>
-                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> Corona cases</h3>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="chartLinePurple"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
       </div>
-
+      
+          
     </div>
   </div>
-
+  
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
@@ -232,12 +245,11 @@
   <!--  Notifications Plugin    -->
   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script>
-  <!-- Black Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <script>
-    $(document).ready(function () {
-      $().ready(function () {
+    $(document).ready(function() {
+      $().ready(function() {
         $sidebar = $('.sidebar');
         $navbar = $('.navbar');
         $main_panel = $('.main-panel');
@@ -254,7 +266,7 @@
 
 
 
-        $('.fixed-plugin a').click(function (event) {
+        $('.fixed-plugin a').click(function(event) {
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
               event.stopPropagation();
@@ -264,7 +276,7 @@
           }
         });
 
-        $('.fixed-plugin .background-color span').click(function () {
+        $('.fixed-plugin .background-color span').click(function() {
           $(this).siblings().removeClass('active');
           $(this).addClass('active');
 
@@ -287,7 +299,7 @@
           }
         });
 
-        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function () {
+        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
           var $btn = $(this);
 
           if (sidebar_mini_active == true) {
@@ -301,23 +313,23 @@
           }
 
           // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function () {
+          var simulateWindowResize = setInterval(function() {
             window.dispatchEvent(new Event('resize'));
           }, 180);
 
           // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function () {
+          setTimeout(function() {
             clearInterval(simulateWindowResize);
           }, 1000);
         });
 
-        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function () {
+        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
           var $btn = $(this);
 
           if (white_color == true) {
 
             $('body').addClass('change-background');
-            setTimeout(function () {
+            setTimeout(function() {
               $('body').removeClass('change-background');
               $('body').removeClass('white-content');
             }, 900);
@@ -325,7 +337,7 @@
           } else {
 
             $('body').addClass('change-background');
-            setTimeout(function () {
+            setTimeout(function() {
               $('body').removeClass('change-background');
               $('body').addClass('white-content');
             }, 900);
@@ -336,21 +348,14 @@
 
         });
 
-        $('.light-badge').click(function () {
+        $('.light-badge').click(function() {
           $('body').addClass('white-content');
         });
 
-        $('.dark-badge').click(function () {
+        $('.dark-badge').click(function() {
           $('body').removeClass('white-content');
         });
       });
-    });
-  </script>
-  <script>
-    $(document).ready(function () {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-
     });
   </script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
