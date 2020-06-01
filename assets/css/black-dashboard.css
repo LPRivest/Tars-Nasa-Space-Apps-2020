@@ -5178,6 +5178,18 @@ input[type="button"].btn-block {
   border-radius: 0.2857rem;
 }
 
+.card2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #2e2d2d;
+  background-clip: border-box;
+  border: 0.0625rem solid rgba(34, 42, 66, 0.05);
+  border-radius: 0.2857rem;
+}
+
 .card>hr {
   margin-right: 0;
   margin-left: 0;
