@@ -1,0 +1,26 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "parks_covid" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "ak16994521", "risk": 2.5, "time": 1507425650893 }, "geometry": { "type": "Point", "coordinates": [-123.15525, 49.249783] } },
+{ "type": "Feature", "properties": { "id": "ak16994519", "risk": 3, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.1139, 49.273253] } },
+{ "type": "Feature", "properties": { "id": "ak16994522", "risk": 4, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.120948, 49.285911] } },
+{ "type": "Feature", "properties": { "id": "ak16994523", "risk": 5, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.192177, 49.249092] } },
+{ "type": "Feature", "properties": { "id": "ak16994524", "risk": 6, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.1764, 49.252391] } },
+{ "type": "Feature", "properties": { "id": "ak16994525", "risk": 7, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.122031, 49.264868] } },
+{ "type": "Feature", "properties": { "id": "ak169945126", "risk": 8, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.073923, 49.268974] } },
+{ "type": "Feature", "properties": { "id": "ak169945127", "risk": 9, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.074121, 49.273323] } },
+{ "type": "Feature", "properties": { "id": "ak169945128", "risk": 9, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates":  [-123.058646, 49.278279] } },
+{ "type": "Feature", "properties": { "id": "ak16994529", "risk": 8, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.025811, 49.276381] } },
+{ "type": "Feature", "properties": { "id": "ak16994530", "risk": 7, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.045363, 49.286214]} },
+{ "type": "Feature", "properties": { "id": "ak16994531", "risk": 4, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.028552, 49.268829] } },
+{ "type": "Feature", "properties": { "id": "ak16994532", "risk": 5.5, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.082823, 49.249576] } },
+{ "type": "Feature", "properties": { "id": "ak16994533", "risk": 10, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates":  [-123.062242, 49.255808] } },
+{ "type": "Feature", "properties": { "id": "ak16994534", "risk": 10, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.067051, 49.235945] } },
+{ "type": "Feature", "properties": { "id": "ak16994535", "risk": 2, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.16013, 49.223703] } },
+{ "type": "Feature", "properties": { "id": "ak16994536", "risk": 3, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.170066, 49.220813] } },
+{ "type": "Feature", "properties": { "id": "ak16994537", "risk": 2, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.033713, 49.21912] } },
+{ "type": "Feature", "properties": { "id": "ak16994538", "risk": 4.5, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.036128, 49.207509] } },
+{ "type": "Feature", "properties": { "id": "ak16994539", "risk": 7.2, "time": 1507425289659}, "geometry": { "type": "Point", "coordinates": [-123.152513, 49.275353] } }
+]
+}
